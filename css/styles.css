@@ -23,6 +23,8 @@ body {
     color: var(--main-text-color);
     font-family: 'Roboto', sans-serif; /*по всей странице кроме логотипа этот шрифт*/      
 }
+
+
 /* Header */
 /*можно было вместо .header описать характеристики основного шрифта в .site-nav{} и в
  .header .contact {} на случай если они будут меняться в дальнейшем,
@@ -30,27 +32,24 @@ body {
   переназначить шрифт и характеристики*/
 
 .header {
-    font-weight: 500;
+        font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em; /*переназначаем интервал*/
    }
 
-.logo {
-    color: #000000;
-    font-family: 'Raleway'; /*переназначаем шрифт*/
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.2; /*переназначаем значение*/
-    letter-spacing: 0.03em; /*так как хедер переназначил это значение на другое, надо его опять назначить*/
-    text-decoration: none;   
-}
-.logo-part {
-    color: var(--accent-color);
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .list {
-    list-style-type: none;
+    list-style-type: none;  
+    margin: 0;
+    padding: 0;
 }
 
 .link {
@@ -67,6 +66,34 @@ body {
     color: var(--accent-color);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+      
+    text-decoration: none;  
+    color: #000000;
+    font-family: 'Raleway'; /*переназначаем шрифт*/
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2; /*переназначаем значение*/
+    letter-spacing: 0.03em; /*так как хедер переназначил это значение на другое, надо его опять назначить*/   
+}
+
+.logo-part {
+    color: var(--accent-color);
+}
+   
+.header-nav .list {
+    display: flex;
+}
+
+.contact-nav {
+    margin-left: auto;
+}
+.list .item + .item {
+margin-left: 50px;
+}
+
 .header-contact {
     color: var(--main-text-color);
     text-decoration: none;
@@ -77,19 +104,45 @@ body {
     color: var(--accent-color);
 }
 
+.main-nav {
+    display: flex;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav .item {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+
+.header-nav .logo {
+    margin-top: 24px;
+    margin-bottom: 25px;
+    margin-right: 93px;
+}
+
 /* Hero */
 .hero {
     background-color: var(--footer-hero-background);
-    
+    text-align: center;
+   /* height: 600px; висота героя согласно макета 600 пикселей, сделал для визуальной наглядности*/
 }
 
 .hero-title {
+    margin:0 0 30px 0;
+    /* margin-bottom: 30px; */
+   /* padding: 200px 0 30px 0; сделал это просто для визуальной наглядности*/
+
     color: #FFFFFF;
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36; /* в макете дизайнер оставил значение в % */
     letter-spacing: 0.06em;
-    text-align: center;
     text-transform: uppercase;
 }
 
@@ -110,7 +163,6 @@ body {
     background-color: #188CE8;
     color: #FFFFFF;
 }
-/* Buttons */
 
 /* Section */
 .section-title {
@@ -120,24 +172,60 @@ body {
     line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
-    
+       
 }
 
 /* Features */
 .feature-list {
+    margin: 0;
+    padding: 0;
+
     font-size: 14px;
     line-height: 1.71;
     list-style-type: none;
     letter-spacing: 0.03em;
+    display: flex;
+   /* text-align: center;*/
+    
 }
 
 .feature-list-title {
+    margin: 94px 0 10px 0;
+    padding: 0;
+
     color: var(--title-text-color); 
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+  
+}
+
+.feature-item {
+    width: 270px;
+}
+
+.feature-item + .feature-item {
+    margin-left: 30px;
+}
+
+/*work list */
+.work {
+    margin: 94px 0 50px 0;
+    padding: 0;
+}
+
+.work-list {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none; 
+    display: flex;
+}
+
+.work-item + .work-item {
+    margin-left: 30px;
 }
 
 /* Team */
@@ -147,6 +235,8 @@ body {
     background-color: var(--second-background);
     list-style-type: none;
     letter-spacing: 0.03em;
+    display: flex;
+  
 }
 
 .team-list-title {
@@ -154,6 +244,7 @@ body {
     font-weight: 500; /* переназначаем */  
     font-size: 16px;
     letter-spacing: 0.03em;
+    
 }
 
 
@@ -199,17 +290,39 @@ body {
     font-size: 16px;
     line-height: 1.62; /* дизайнер оставил в макете значение в % */
     cursor: pointer;
+    height: 38px;
+    min-width: 73px;
+    border-radius: 4px;
+    border: 1px solid transparent;
     }
     
-    .button:hover,
-    .button:focus {
-        background-color: var(--accent-color);
-        color: #FFFFFF;   
+.button:hover,
+.button:focus {
+    background-color: var(--accent-color);
+    color: #FFFFFF;   
     }
     
+.item-button + .item-button {
+    margin-left: 8px;
+    
+    }
 
-.projects {
+.projects-buttons {
+    margin: 0;
+    padding: 0;
+
     list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.projects-example {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .projects-link{
@@ -218,6 +331,7 @@ body {
     color: var(--main-text-color);
     letter-spacing: 0.03em;
     text-decoration: none;
+    
 }
 
 .projects-title {
@@ -226,4 +340,17 @@ body {
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
+}
+
+.item-project {
+    width: 370px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.item-project:nth-child(3n) {
+    margin-right: 0;
+}
+.item-project:nth-last-child(-n +3) {
+    margin-bottom: 0;
 }
