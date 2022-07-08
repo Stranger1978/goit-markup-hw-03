@@ -229,13 +229,22 @@ margin-left: 50px;
 }
 
 /* Team */
+.team {
+    margin: 94px 0 50px 0;
+    padding: 0;
+}
+
 .team-list {
+    margin: 0;
+    padding: 0;
+
     font-size: 16px;
     line-height: 1.19;
     background-color: var(--second-background);
     list-style-type: none;
     letter-spacing: 0.03em;
     display: flex;
+    justify-content: center;
   
 }
 
@@ -244,9 +253,12 @@ margin-left: 50px;
     font-weight: 500; /* переназначаем */  
     font-size: 16px;
     letter-spacing: 0.03em;
-    
 }
 
+
+.team-item + .team-item {
+    margin-left: 30px;
+}
 
 /* Footer */
 .footer {
@@ -343,7 +355,7 @@ margin-left: 50px;
 }
 
 .item-project {
-    width: 370px;
+    width: calc((100% - 60px ) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
 }
