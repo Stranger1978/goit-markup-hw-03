@@ -378,6 +378,7 @@ margin-left: 50px;
 .projects-title {
     margin-top: 20px;
     margin-bottom: 4px;
+    padding-left: 24px;
 
     color: var(--title-text-color);
     font-weight: 700;
@@ -390,13 +391,18 @@ margin-left: 50px;
     width: calc((100% - 60px ) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
-    padding-bottom: 20px;
+   /* padding-bottom: 20px;*/
+    
 
     border: 1px solid #EEEEEE;
     border-top: 0ch;
     /*border-left: 0ch;
     border-right: 0ch;*/
+}
 
+.item-project .text {
+    padding-left: 24px;
+    padding-bottom: 20px;
 }
 
 .item-project:nth-child(3n) {
