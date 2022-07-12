@@ -24,19 +24,31 @@ body {
     font-family: 'Roboto', sans-serif; /*по всей странице кроме логотипа этот шрифт*/      
 }
 
+h1, 
+h2,
+h3,
+h4,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
 
 /* Header */
-/*можно было вместо .header описать характеристики основного шрифта в .site-nav{} и в
- .header .contact {} на случай если они будут меняться в дальнейшем,
- но я решил один раз назначить характеристики для всего хедера и для Лого отдельно
-  переназначить шрифт и характеристики*/
 
 .header {
-        font-weight: 500;
+    font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em; /*переназначаем интервал*/
    }
+
+.line {
+    border: 1px solid #ECECEC;
+    border-top: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
 
 .container {
     margin-left: auto;
@@ -46,10 +58,13 @@ body {
     padding-right: 15px;
 }
 
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
 .list {
     list-style-type: none;  
-    margin: 0;
-    padding: 0;
 }
 
 .link {
@@ -111,6 +126,7 @@ margin-left: 50px;
 .header-nav {
     display: flex;
     align-items: center;
+    
 }
 
 .header-nav .item {
@@ -134,10 +150,9 @@ margin-left: 50px;
 }
 
 .hero-title {
-    margin:0 0 30px 0;
-    /* margin-bottom: 30px; */
-   /* padding: 200px 0 30px 0; сделал это просто для визуальной наглядности*/
-
+    margin: 0 0 30px 0;
+    padding-top: 200px;
+   
     color: #FFFFFF;
     font-weight: 900;
     font-size: 44px;
@@ -156,6 +171,7 @@ margin-left: 50px;
     height: 50px;
     left: 700px;
     top: 430px;
+    margin-bottom: 200px;
 }
 
 .hero-button:hover,
@@ -166,19 +182,20 @@ margin-left: 50px;
 
 /* Section */
 .section-title {
+    
     color: var(--title-text-color);   
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
-       
 }
 
 /* Features */
 .feature-list {
-    margin: 0;
-    padding: 0;
+   /* margin: 0;
+    padding: 0;*/
+    padding-top: 94px;
 
     font-size: 14px;
     line-height: 1.71;
@@ -190,8 +207,8 @@ margin-left: 50px;
 }
 
 .feature-list-title {
-    margin: 94px 0 10px 0;
-    padding: 0;
+    margin-bottom: 10px;
+   /* padding: 0;*/
 
     color: var(--title-text-color); 
     font-weight: 700;
@@ -212,13 +229,13 @@ margin-left: 50px;
 
 /*work list */
 .work {
-    margin: 94px 0 50px 0;
-    padding: 0;
+    margin-bottom: 50px;
+   /* padding: 0; */
 }
 
 .work-list {
-    margin: 0;
-    padding: 0;
+  /*  margin: 0;
+    padding: 0;*/
 
     list-style-type: none; 
     display: flex;
@@ -230,13 +247,13 @@ margin-left: 50px;
 
 /* Team */
 .team {
-    margin: 94px 0 50px 0;
-    padding: 0;
+    margin-bottom: 50px;
+   /* padding: 0;*/
 }
 
 .team-list {
-    margin: 0;
-    padding: 0;
+  /*  margin: 0;
+    padding: 0;*/
 
     font-size: 16px;
     line-height: 1.19;
@@ -245,16 +262,21 @@ margin-left: 50px;
     letter-spacing: 0.03em;
     display: flex;
     justify-content: center;
-  
+    padding-bottom: 30px;
+    text-align: center;
+
 }
 
 .team-list-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+
     color: var(--title-text-color);
     font-weight: 500; /* переназначаем */  
     font-size: 16px;
     letter-spacing: 0.03em;
+    
 }
-
 
 .team-item + .team-item {
     margin-left: 30px;
@@ -262,6 +284,8 @@ margin-left: 50px;
 
 /* Footer */
 .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
     background-color: var(--footer-hero-background);
     color: #FFFFFF;
     font-size: 14px;
@@ -280,9 +304,12 @@ margin-left: 50px;
   }
 
 .address {
+    margin-top: 20px;
+
     font-style: normal;
 } 
 .contact {
+    margin-top: 9px;
     color: var(--contact-text-color);
     text-decoration: none;
 }
@@ -320,8 +347,9 @@ margin-left: 50px;
     }
 
 .projects-buttons {
-    margin: 0;
-    padding: 0;
+   /* margin: 0;
+    padding: 0;*/
+    margin-bottom: 50px;
 
     list-style-type: none;
     display: flex;
@@ -329,12 +357,13 @@ margin-left: 50px;
 }
 
 .projects-example {
-    margin: 0;
-    padding: 0;
+   /* margin: 0;
+    padding: 0;*/
 
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .projects-link{
@@ -347,6 +376,9 @@ margin-left: 50px;
 }
 
 .projects-title {
+    margin-top: 20px;
+    margin-bottom: 4px;
+
     color: var(--title-text-color);
     font-weight: 700;
     font-size: 18px;
@@ -358,6 +390,13 @@ margin-left: 50px;
     width: calc((100% - 60px ) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
+    padding-bottom: 20px;
+
+    border: 1px solid #EEEEEE;
+    border-top: 0ch;
+    /*border-left: 0ch;
+    border-right: 0ch;*/
+
 }
 
 .item-project:nth-child(3n) {
